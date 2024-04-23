@@ -1,0 +1,18 @@
+{
+    "foods-list": [
+        {
+            "id": "0",
+            "name": "apple",
+            "description": "crunchy",
+            "color": "red",
+            "group": "fruit"
+        },
+        {
+            "id": "1",
+            "name": "banana",
+            "description": "crunchy",
+            "color": "yellow",
+            "group": "fruit"
+        }
+    ]
+}
