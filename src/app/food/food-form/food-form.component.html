@@ -1,4 +1,4 @@
-<h2>Addd a new food</h2>
+<h2>Add a new food</h2>
 
 <form [formGroup]="foodForm" (ngSubmit)="addFood(foodForm.value)">
     <div>
@@ -21,22 +21,5 @@
         <label for="food_group">group: </label>
         <input id="food_group" type="text" formControlName="group">
     </div>
-    <button class="button" type="submit"> Add food </button>
+    <button class="button" id="button_form" type="submit"> Add food </button>
 </form>
-
-<!--label for="first-name">id: </label>
-<input type="text" id="food_id" formControlName="id">
-<label for="food_name">name: </label>
-<input type="text" id="food_name" formControlName="name">
-<label for="first-name">description: </label>
-<input type="text" id="food_description" formControlName="description">
-<label for="first-name">color: </label>
-<input type="text" id="food_color" formControlName="color">
-<label for="first-name">group: </label>
-<input type="text" id="food_group" formControlName="group"-->
-
-<!--p>id: <input name="food_id" [(ngModel)]="food.id" type="text" /></p>
-    <p>name: <input name="food_name" [(ngModel)]="food.name" type="text" /></p>
-    <p>description: <input name="food_description" [(ngModel)]="food.description" type="text" /></p>
-    <p>color: <input name="food_color" [(ngModel)]="food.color" type="text" /></p>
-    <p>group: <input name="food_group" [(ngModel)]="food.group" type="text" /></p-->

@@ -29,6 +29,7 @@ export class FoodFormComponent implements OnInit {
 
   addFood(food: any) {
     console.log(food);
+    this.foodForm.reset();
 
     let addAction: Action = {
       type: ACTIONS.ADD_FOOD,
