@@ -1,3 +1,4 @@
+import { FoodModel } from "../../models/food.model"
 
 
 export interface Action {
@@ -13,19 +14,12 @@ export const ACTIONS = {
     GET_FOODS_FAILED: 'GET_FOODS_FAILED'
 }
 
-export interface IFood {
-    id?: string,
-    name?: string,
-    description?: string,
-    color?: string,
-    group?: string
-}
 
 export interface MyAppState {
-    foods: Array<IFood>
+    foods: Array<FoodModel>
 }
 
-export function food_reducer(state: Array<IFood> = [], action: Action) {
+export function food_reducer(state: Array<FoodModel> = [], action: Action) {
     switch (action.type) {
         case ACTIONS.ADD_FOOD:
             return [...state, action.payload]
@@ -34,8 +28,9 @@ export function food_reducer(state: Array<IFood> = [], action: Action) {
                 return food.id != action.payload.id
             })
         case ACTIONS.GET_FOODS:
-            var newState= state.length > 0 ? [...state, ...action.payload] : action.payload
-            return newState;
+            console.log('Se ha lanzado la acción GET_FOODS')
+            //var newState= state.length > 0 ? [...state, ...action.payload] : action.payload
+            return state;
         case ACTIONS.GET_FOODS_SUCCESS:
             var newState= state.length > 0 ? [...state, ...action.payload] : action.payload
             return newState;

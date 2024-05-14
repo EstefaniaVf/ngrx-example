@@ -3,16 +3,36 @@
         {
             "id": "0",
             "name": "apple",
-            "description": "crunchy",
-            "color": "red",
             "group": "fruit"
         },
         {
             "id": "1",
-            "name": "banana",
-            "description": "crunchy",
-            "color": "yellow",
-            "group": "fruit"
+            "name": "rice",
+            "group": "cereal"
+        }
+    ],
+    "drinks-list": [
+        {
+            "id": "0",
+            "name": "coca-cola",
+            "group": "soft drink"
+        },
+        {
+            "id": "1",
+            "name": "rum",
+            "group": "alcholic"
+        }
+    ],
+    "animals-list": [
+        {
+            "id": "0",
+            "name": "dog",
+            "group": "mammal"
+        },
+        {
+            "id": "1",
+            "name": "snake",
+            "group": "reptile"
         }
     ]
 }

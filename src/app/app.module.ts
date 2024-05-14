@@ -1,15 +1,14 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { food_reducer } from './food/food.reducer';
+import { food_reducer } from './state/reducers/food.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { FoodEffects } from './food/food.effects';
+import { FoodEffects } from './state/effects/food.effects';
 import { CommonModule } from '@angular/common';
-import { FoodComponent } from './food/food.component';
-import { FoodFormComponent } from './food/food-form/food-form.component';
-import { FoodListComponent } from './food/food-list/food-list.component';
+import { FoodFormComponent } from './components/food-form/food-form.component';
+import { FoodListComponent } from './components/food-list/food-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 

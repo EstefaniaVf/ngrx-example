@@ -1,4 +1,5 @@
-<h2>Add a new food</h2>
+<ng-content></ng-content>
+<h2>Add a new {{itemTypeChild}}</h2>
 
 <form [formGroup]="foodForm" (ngSubmit)="addFood(foodForm.value)">
     <div>
@@ -10,16 +11,8 @@
         <input id="food_name" type="text" formControlName="name">
     </div>
     <div>
-        <label for="food_description">description: </label>
-        <input id="food_description" type="text" formControlName="description">
-    </div>
-    <div>
-        <label for="food_color">color: </label>
-        <input id="food_color" type="text" formControlName="color">
-    </div>
-    <div>
         <label for="food_group">group: </label>
         <input id="food_group" type="text" formControlName="group">
     </div>
-    <button class="button" id="button_form" type="submit"> Add food </button>
+    <button class="button" id="button_form" type="submit"> Add </button>
 </form>

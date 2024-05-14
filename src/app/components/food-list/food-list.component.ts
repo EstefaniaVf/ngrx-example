@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IFood, MyAppState, Action, ACTIONS } from '../food.reducer';
+import { MyAppState, Action, ACTIONS } from '../../state/reducers/food.reducer';
 import { Store } from '@ngrx/store';
+import { FoodModel } from '../../models/food.model';
 
 @Component({
   selector: 'app-food-list',
@@ -9,20 +10,24 @@ import { Store } from '@ngrx/store';
   styleUrl: './food-list.component.css'
 })
 export class FoodListComponent implements OnInit {
-  foods$: Observable<Array<IFood>>
+  @Input() itemTypeChild: string = '';
+  foods$: Observable<Array<FoodModel>>
 
   constructor(private store: Store<MyAppState>) {
     this.foods$ = store.select('foods');
   }
 
   ngOnInit(): void {
-    this.store.dispatch({
-      type: ACTIONS.GET_FOODS
-    });
+    let getItems: Action = {
+      type: ACTIONS.GET_FOODS,
+      payload: this.itemTypeChild
+    }
+
+    this.store.dispatch(getItems);
 
   }
 
-  deleteFood(food: IFood) {
+  deleteFood(food: FoodModel) {
     let deleteAction: Action = {
       type: ACTIONS.REMOVE_FOOD,
       payload: food

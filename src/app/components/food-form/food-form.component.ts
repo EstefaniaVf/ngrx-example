@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ACTIONS, IFood, MyAppState, Action } from '../food.reducer';
+import { Component, Input, OnInit } from '@angular/core';
+import { ACTIONS, MyAppState, Action } from '../../state/reducers/food.reducer';
 import { Store } from '@ngrx/store';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { FoodModel } from '../../models/food.model';
 
 @Component({
   selector: 'app-food-form',
@@ -9,7 +10,8 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrl: './food-form.component.css'
 })
 export class FoodFormComponent implements OnInit {
-  food!: IFood;
+  @Input() itemTypeChild: string = '';
+  food!: FoodModel;
   foodForm;
 
   constructor(private store: Store<MyAppState>,
@@ -18,8 +20,6 @@ export class FoodFormComponent implements OnInit {
     this.foodForm = this.formBuilder.group({
       id: '',
       name: '',
-      description: '',
-      color: '',
       group: ''
     });
   }

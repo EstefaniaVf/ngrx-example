@@ -1,6 +1,19 @@
-<div style="text-align: center">
-    <h1>FOOD FORM</h1>
-    <app-food-form></app-food-form>
-    <h1>FOOD LIST</h1>
-    <app-food-list></app-food-list>
-</div>
+<ng-container>
+    <div style="text-align: center" *ngIf="itemType == ''">
+        <h1>Welcome to NgRx example!</h1>
+        <h2>Choose the type of item you wish to view:
+            <p><button id="button_foods" (click)="selectedItemType('foods')"> Foods </button></p>
+            <p><button id="button_drinks" (click)="selectedItemType('drinks')"> Drinks </button></p>
+            <p><button id="button_animals" (click)="selectedItemType('animals')"> Animals </button></p>
+        </h2>
+    </div>
+
+    <div style="text-align: center" *ngIf="itemType && itemType.trim()">
+        <app-food-form itemTypeChild={{itemType}}>
+            <h1 style="text-transform: uppercase">{{itemType}} FORM</h1>
+        </app-food-form>
+        <app-food-list itemTypeChild={{itemType}}>
+            <h1 style="text-transform: uppercase">{{itemType}} LIST</h1>
+        </app-food-list>
+    </div>
+</ng-container>

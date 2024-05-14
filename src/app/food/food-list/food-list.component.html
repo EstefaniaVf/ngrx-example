@@ -1,7 +1,0 @@
-<h2>List of foods: {{ (foods$ | async)?.length}}</h2>
-
-<div *ngIf="foods$ | async as foods">
-    <div *ngFor="let food of foods">
-        <p> Item: {{food.id}} - {{food.name}} <button href="#" id="button_delete_{{food.name}}" (click)="deleteFood(food)"> Delete </button></p>
-    </div>
-  </div>
